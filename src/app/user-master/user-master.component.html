@@ -1,0 +1,47 @@
+<section>
+<header>
+  <nav class="navbar">
+    <h1>{{pageTitle}}</h1>
+  </nav>
+</header>
+</section>
+<section>
+<main>
+<table class="table table-bordered">
+  <thead>
+    <tr>
+      <!-- <th>Id</th> -->
+      <th>Name</th>
+      <!-- <th>Login</th>
+      <th>Logout</th> -->
+      <th>Total Worked Time</th>
+      <th>Pecentage of TT</th>
+      <!-- <th>Entry</th>
+      <th>Deleted</th> -->
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let user of userDataSource">
+      <!-- <td>{{user.Id}}</td> -->
+      <td>{{user.EmployeeName}}</td>
+      <!-- <td>{{user.StarTimeUtc}}</td>
+      <td>{{user.EndTimeUtc}}</td>
+      <td>{{user.EntryNotes}}</td>
+      <td>{{user.DeletedOn}}</td> -->
+      <!-- <td *ngIf="user.TotalTime > 100;">{{user.TotalTime}} hours</td> -->
+      <td ng-class="{'red':(variable < =100)}" >{{user.TotalTime}} hours</td>
+      <td>{{user.TotalTime/200*100}} % </td>
+      <!-- <td>{{difference()}}</td> -->
+    </tr>
+  </tbody>
+</table>
+
+<div class="div" style="width: 600px; height: 600px;">
+  <canvas id="myChart"></canvas>
+</div> 
+
+<!-- <script type="text/javascript" src="https://unpkg.com/chart.js-plugin-labels-dv/dist/chartjs-plugin-labels.min.js"></script> -->
+</main>
+</section>
+
+<!-- https://youtu.be/uAubTKfbBy8 -->
